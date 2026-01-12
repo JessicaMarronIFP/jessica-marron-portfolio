@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeTaskManager</title>
+    <link rel="stylesheet" href="css/bootstrap.css" >
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-callout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--
+    Images are from https://unsplash.com/
+    -->
+
+
+</head>
+<body>
+    <nav id="scrolling_navbar" class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">App híbrida con Apache Cordova y AWS</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav fw-bold">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#home">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#about">Perfil Profesional</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#travel">Proyectos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html#blog">Aprendizaje</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#contact">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <main class="min-vh-100 d-flex flex-column justify-content-center align-items-center bg-light p-3 rounded-2">
+            <h1 class="col-lg-4 col-md-6 text-center mt-4 py-4 text-success"></h1>
+            
+            <figure class="figure">
+                <img src="image/hometask1.png" class="figure-img img-fluid rounded-5 mx-auto d-block project-mockup shadow-lg"
+                    alt="HomeTaskManager">
+
+                <figcaption class="figure-caption text-center">Proyecto final de Desarrollo de aplicaciones</figcaption>
+            </figure>
+
+            <div class="d-grid gap-3 d-flex flex-column justify-content-center align-items-center col-xl-8 col-lg-8 col-md-8 m-4">
+                <div>
+                    <p class="fs-6 text-justify">HomeTaskManager es una aplicación web y móvil para la gestión integral del hogar, orientada a familias, parejas y compañeros de piso. Centraliza tareas, listas, calendario, documentos y presupuestos en una única plataforma colaborativa, incorporando gamificación para fomentar la participación y el reparto equitativo de responsabilidades.
+
+El proyecto se desarrolló siguiendo metodología SCRUM y un enfoque user-centered, apoyado en investigación previa, prototipado UX/UI y pruebas de usabilidad. 
+<br><br>Se diseñó una interfaz clara e intuitiva, adaptada a distintos roles de usuario dentro de un mismo hogar y una navegación sencilla desde el menú inicio y un topbar presente en todas las páginas. Un tutorial inicial y un apartado FAQ guían al usuario para utilizar la app. Finalmente, un apartado con funcionalidades Premium será desarrollado para monetizar el producto.
+<br><br>
+
+A nivel técnico, se implementó como una app híbrida con Apache Cordova, backend serverless en AWS (Amplify, AppSync, GraphQL, DynamoDB, S3) y autenticación mediante Amazon Cognito. El trabajo en equipo y el control de versiones se gestionaron con GitHub.</p>
+                </div>
+
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                    <p>Aprendizajes clave: arquitectura cloud, APIs GraphQL, metodologías ágiles, diseño centrado en el usuario y desarrollo de aplicaciones completas de principio a fin.</p>
+                    </blockquote>
+                    
+                </figure>
+
+                <div>
+                    <a href="assets/HomeTaskManager_Documentacion.pdf" download>
+                📄 Ver documentación completa del proyecto (PDF)
+                </a>
+
+                </div>
+
+                <div class="border-start border-success border-4 fs-6 px-2 text-justify">🔧 Tecnologías
+
+JavaScript · HTML · CSS · Apache Cordova · AWS · GraphQL · DynamoDB · Figma · GitHub
+<br>
+👥 Metodología
+
+SCRUM · Design Thinking · UX/UI · Testing de usabilidad</div>
+
+                <div class="pt-3">
+                    <p class="fs-6 text-justify"><strong>VALORACIÓN FINAL DEL TUTOR</strong><br> <br>
+Tras analizar en profundidad la memoria técnica del proyecto HomeTask Manager, quiero felicitaros por la excepcional calidad del trabajo presentado, el cual demuestra un nivel de madurez profesional y técnico sobresaliente para un fin de ciclo formativo. La estructura del informe es impecable, logrando una cohesión perfecta entre los diferentes apartados gracias a un hilo conductor que guía al lector de forma natural desde la detección de una necesidad social hasta la implementación de una solución técnica compleja. Es especialmente destacable cómo habéis sabido conectar la fase de investigación cualitativa, apoyada en herramientas como el mapa de empatía y las técnicas de ideación, con la definición de las funcionalidades clave y la arquitectura del sistema, asegurando que cada decisión técnica esté plenamente justificada por los requerimientos del usuario final. Esta trazabilidad es lo que dota de solidez al proyecto y lo eleva por encima de un simple ejercicio de programación, convirtiéndolo en un plan de desarrollo de producto integral. Dada la considerable extensión del informe, es admirable la capacidad que habéis tenido para mantener el rigor y la claridad en todo momento, sin perder el foco en los objetivos marcados. Entre los aspectos positivos más relevantes, destaca la excelente aplicación de la metodología SCRUM y la definición de objetivos OKR, lo que refleja una organización del equipo muy eficiente y una clara orientación a resultados. Asimismo, la profundidad en el análisis de usabilidad mediante las heurísticas de Nielsen y el detalle en la documentación de la infraestructura en AWS y el backend demuestran un dominio técnico avanzado y una gran atención al detalle. El apartado dedicado a la mirada hacia el futuro y las funciones premium cierra el documento con una visión empresarial muy acertada, aportando una perspectiva realista sobre la escalabilidad del proyecto. Se trata de un trabajo brillante, exhaustivo y equilibrado en todas sus facetas, que sin duda es merecedor de la máxima calificación por el esfuerzo, la coherencia y la profesionalidad demostrada en cada página. ¡Os felicito por todo el trabajo realizado este año!</p>
+                </div>
+
+            </div>
+
+<!-- GALERÍA -->
+      <div class="row">
+
+        <div class="col-12 mb-5 text-center">
+          <img src="image/app3.png" class="img-fluid rounded-5 hometask">
+        </div>
+
+        <div class="col-12 mb-5 text-center">
+          <img src="image/app5.png" class="img-fluid rounded-5 hometask">
+        </div>
+
+        <div class="col-12 mb-5 text-center">
+          <img src="image/app4.png" class="img-fluid rounded-5 hometask">
+        </div>
+
+        <div class="col-12 mb-5 text-center">
+          <img src="image/app6.png" class="img-fluid rounded-5 hometask">
+        </div>
+
+      </div>
+
+
+        </main>
+
+        <footer class="bg-light">
+            <div class="container">
+                 <p class="copyright-text text-center fs-8 py-4 mb-0">© 2025 Jéssica Marrón<a class="text-dark" href="https://github.com/ecemgo" target="_blank"></a></p>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script>
+        function switchStyle() {
+        if (document.getElementById('styleSwitch').checked) {
+            document.getElementById('gallery').classList.add("custom");
+            document.getElementById('exampleModal').classList.add("custom");
+        } else {
+            document.getElementById('gallery').classList.remove("custom");
+            document.getElementById('exampleModal').classList.remove("custom");
+        }
+        };
+        
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+   
+</body>
+</html>
