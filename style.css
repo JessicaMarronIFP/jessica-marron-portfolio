@@ -337,6 +337,7 @@ body {
 
 .hometask {
   max-width: 900px;
+  margin-left: 70px;
 }
 
 #img_dl {
@@ -392,7 +393,7 @@ main .row {
 /* imágenes SIEMPRE dentro de pantalla */
 main img {
   max-width: 100%;
-  width: 100%;
+
   height: auto;
   display: block;
 }
@@ -422,4 +423,16 @@ figure.figure img.project-mockup {
 
 #img_ht{
   max-width: 50% !important;
+}
+
+#metrica1{
+  max-width: 900px;
+  margin-left: 65px;
+ 
+}
+
+#metrica2{
+  max-width: 400px;
+  margin-left: 65px;
+ 
 }
