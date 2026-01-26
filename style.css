@@ -374,3 +374,17 @@ body {
     width: 100%;
   }
 }
+
+/* ===== FIX responsive para páginas de proyectos/blog ===== */
+@media (max-width: 576px) {
+  .project-mockup,
+  .hometask {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+}
