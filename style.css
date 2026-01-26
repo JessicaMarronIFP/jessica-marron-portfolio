@@ -388,3 +388,16 @@ body {
 html, body {
   overflow-x: hidden;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-mockup,
+.hometask,
+#img_dl {
+  width: 100%;
+  max-width: 100%;
+}
