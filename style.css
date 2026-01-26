@@ -375,35 +375,31 @@ body {
   }
 }
 
-/* ===== FIX responsive para páginas de proyectos/blog ===== */
-@media (max-width: 576px) {
-  .project-mockup,
-  .hometask {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-}
+/* === FIX DEFINITIVO BLOG === */
 
+/* corta cualquier desborde */
 html, body {
+  width: 100%;
   overflow-x: hidden;
 }
 
-img {
+/* neutraliza Bootstrap row en blogs */
+main .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* imágenes SIEMPRE dentro de pantalla */
+main img {
   max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
 }
 
-.project-mockup,
-.hometask {
+/* figuras no inline */
+main figure {
   width: 100%;
-  max-width: 900px; /* vuelve a tu límite bonito */
+  margin: 0;
 }
 
-
-/* Bootstrap: evita overflow por .row (márgenes negativos) cuando algo se descuadra */
-.row {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
