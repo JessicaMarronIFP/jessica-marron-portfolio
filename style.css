@@ -408,9 +408,18 @@ figure.figure img.project-mockup {
   max-width: 100% !important;
 }
 
-/* HERO blog-page4: evitar imagen achatada en desktop */
-#img_dl {
-  height: auto !important;
-  max-height: none !important;
-  object-fit: contain;
+#img_vv {
+  max-width: 50% !important;
+}
+
+#img_ml{
+  max-width: 50% !important;
+}
+
+#img_gt{
+  max-width: 50% !important;
+}
+
+#img_ht{
+  max-width: 50% !important;
 }
