@@ -396,8 +396,14 @@ img {
 }
 
 .project-mockup,
-.hometask,
-#img_dl {
+.hometask {
   width: 100%;
-  max-width: 100%;
+  max-width: 900px; /* vuelve a tu límite bonito */
+}
+
+
+/* Bootstrap: evita overflow por .row (márgenes negativos) cuando algo se descuadra */
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
