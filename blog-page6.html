@@ -40,7 +40,7 @@
             <div class="text-center mb-5">
                 <span class="section-tag">Proyecto personal</span>
                 <h1 class="section-title"><span class="gradient-text">LUCA HOME</span></h1>
-                <p class="section-subtitle">Segunda versión mejorada del Trabajo Fin de Ciclo (TFC)</p>
+                <p class="section-subtitle">Gestor de tareas del hogar con gamificación · PWA · segunda versión mejorada del Trabajo Fin de Ciclo (TFC)</p>
             </div>
 
             <div class="row justify-content-center">
@@ -48,28 +48,41 @@
                     <div class="d-grid gap-4">
 
                         <p class="fs-6">
-                            LUCA HOME es un proyecto personal que nace como una segunda versión mejorada de mi Trabajo Fin de Ciclo (TFC). Partiendo de la idea original, decidí rehacerlo desde cero con un enfoque más sólido, una mejor arquitectura y una experiencia de usuario más cuidada, aplicando todo lo aprendido desde entonces.
+                            LUCA HOME es un proyecto personal que nace como una segunda versión mejorada de mi Trabajo Fin de Ciclo (TFC). Partiendo de la idea original, decidí rehacerlo desde cero con una arquitectura más sólida, una experiencia de usuario más cuidada y muchas funcionalidades nuevas, aplicando todo lo aprendido desde entonces.
                             <br><br>
-                            Es una plataforma web para la gestión y organización del hogar, que reúne tareas, rutinas y seguimiento en un mismo espacio. Está pensada para simplificar el día a día de familias y convivientes, ofreciendo una solución intuitiva y accesible para mantener el hogar siempre bajo control.
+                            Es una <strong>PWA (Progressive Web App)</strong> para organizar la vida doméstica en familia o entre compañeros de piso. Convierte las tareas del hogar en un juego: puntos, niveles, insignias, retos diarios y recompensas canjeables, todo dentro de "hogares" compartidos entre varios miembros.
                         </p>
+
+                        <div class="pt-2">
+                            <p class="fs-6">
+                                <strong>Funcionalidades destacadas</strong>
+                            </p>
+                            <ul class="fs-6">
+                                <li><strong>Tareas y gamificación:</strong> asignación con puntos, niveles e insignias, ordenación inteligente (vencidas primero) y sistema anti-trampas con validación entre miembros.</li>
+                                <li><strong>Retos y recompensas:</strong> retos diarios aleatorios y catálogo de recompensas canjeables con puntos.</li>
+                                <li><strong>Cuentas del hogar (estilo Tricount):</strong> gastos compartidos con varios modos de reparto y algoritmo de transferencias mínimas para saldar deudas con el menor número de pagos.</li>
+                                <li><strong>Multi-hogar y roles:</strong> un usuario puede pertenecer a varios hogares con invitaciones por código y permisos por rol (admin / miembro).</li>
+                                <li><strong>Y más:</strong> ranking semanal/mensual, presupuestos, documentos, listas de la compra, calendario, mascota virtual que evoluciona, modo oscuro y diseño mobile-first.</li>
+                            </ul>
+                        </div>
 
                         <figure class="text-center">
                             <blockquote class="blockquote">
                                 <p>
-                                    <strong>Aprendizajes clave</strong><br><br>
-                                    Replanteamiento completo de un proyecto previo · Mejora de la arquitectura y la estructura de datos · Diseño de una experiencia de usuario más clara · Despliegue en producción con Vercel · Toma de decisiones de producto · Iteración sobre una idea propia · Autonomía y aprendizaje continuo
+                                    <strong>Arquitectura y decisiones técnicas</strong><br><br>
+                                    PWA instalable con service worker propio (precache con Workbox) · Backend serverless sobre Supabase con Row Level Security · Lógica sensible en funciones SECURITY DEFINER de PostgreSQL · Notificaciones push event-driven (Database Webhook → Edge Function que firma el push con VAPID) · Tareas programadas con pg_cron · Almacenamiento privado con URLs firmadas temporales
                                 </p>
                             </blockquote>
                         </figure>
 
                         <div class="border-start border-success border-4 fs-6">
                             <strong>🔧 Tecnologías</strong><br>
-                            Desarrollo web · Base de datos · Despliegue en Vercel · UX/UI · Organización de tareas y rutinas
+                            React 19 · Vite · Tailwind CSS v4 · React Router 7 · React Hook Form · Supabase (PostgreSQL + Row Level Security + Edge Functions) · vite-plugin-pwa · Workbox · Web Push API + VAPID · lucide-react · date-fns · Vercel
                         </div>
 
                         <div class="pt-3">
                             <p class="fs-6">
-                                A diferencia de la versión original del TFG, en LUCA HOME he priorizado la calidad sobre la rapidez: replanteé la estructura del proyecto, mejoré la organización de la información y trabajé una interfaz más limpia y usable. El resultado es una aplicación desplegada y funcional que refleja mi evolución como desarrolladora y mi forma de afrontar un proyecto de principio a fin.
+                                A diferencia de la versión original del TFC, en LUCA HOME he priorizado la calidad y la profundidad técnica: una PWA real con notificaciones push nativas, seguridad a nivel de base de datos con RLS, lógica de negocio bien encapsulada y una experiencia de usuario mobile-first. El resultado es una aplicación desplegada y funcional que refleja mi evolución como desarrolladora y mi forma de afrontar un proyecto de principio a fin.
                             </p>
                         </div>
 
