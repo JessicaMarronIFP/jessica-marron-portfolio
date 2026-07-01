@@ -64,6 +64,9 @@ a { text-decoration: none; color: inherit; }
     inset: 0;
     z-index: -1;
     overflow: hidden;
+    will-change: transform;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     background:
         radial-gradient(circle at 15% 10%, rgba(168, 85, 247, .28), transparent 45%),
         radial-gradient(circle at 85% 15%, rgba(34, 211, 238, .22), transparent 45%),

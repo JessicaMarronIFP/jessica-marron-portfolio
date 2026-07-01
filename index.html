@@ -261,8 +261,18 @@
 
     <!-- Menú móvil -->
     <script>
-        document.getElementById('navToggle').addEventListener('click', function() {
-            document.getElementById('navLinks').classList.toggle('show-mobile');
+        var navToggle = document.getElementById('navToggle');
+        var navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navLinks.classList.toggle('show-mobile');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (navLinks.classList.contains('show-mobile') && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('show-mobile');
+            }
         });
     </script>
 
