@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUCA HOME · Jéssica Marrón</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-callout.css">
+    <link rel="stylesheet" href="css/style.css?v=9">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav id="scrolling_navbar" class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#travel">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html#blog">Aprendizaje</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="bg-light">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <span class="section-tag">Proyecto personal</span>
+                <h1 class="section-title"><span class="gradient-text">LUCA HOME</span></h1>
+                <p class="section-subtitle">Gestor de tareas del hogar con gamificación · PWA · segunda versión mejorada del Trabajo Fin de Ciclo (TFC)</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <div class="d-grid gap-4">
+
+                        <p class="fs-6">
+                            LUCA HOME es un proyecto personal que nace como una segunda versión mejorada de mi Trabajo Fin de Ciclo (TFC). Partiendo de la idea original, decidí rehacerlo desde cero con una arquitectura más sólida, una experiencia de usuario más cuidada y muchas funcionalidades nuevas, aplicando todo lo aprendido desde entonces.
+                            <br><br>
+                            Es una <strong>PWA (Progressive Web App)</strong> para organizar la vida doméstica en familia o entre compañeros de piso. Convierte las tareas del hogar en un juego: puntos, niveles, insignias, retos diarios y recompensas canjeables, todo dentro de "hogares" compartidos entre varios miembros.
+                        </p>
+
+                        <div class="pt-2">
+                            <p class="fs-6">
+                                <strong>Funcionalidades destacadas</strong>
+                            </p>
+                            <ul class="fs-6">
+                                <li><strong>Tareas y gamificación:</strong> asignación con puntos, niveles e insignias, ordenación inteligente (vencidas primero) y sistema anti-trampas con validación entre miembros.</li>
+                                <li><strong>Retos y recompensas:</strong> retos diarios aleatorios y catálogo de recompensas canjeables con puntos.</li>
+                                <li><strong>Cuentas del hogar (estilo Tricount):</strong> gastos compartidos con varios modos de reparto y algoritmo de transferencias mínimas para saldar deudas con el menor número de pagos.</li>
+                                <li><strong>Multi-hogar y roles:</strong> un usuario puede pertenecer a varios hogares con invitaciones por código y permisos por rol (admin / miembro).</li>
+                                <li><strong>Y más:</strong> ranking semanal/mensual, presupuestos, documentos, listas de la compra, calendario, mascota virtual que evoluciona, modo oscuro y diseño mobile-first.</li>
+                            </ul>
+                        </div>
+
+                        <figure class="text-center">
+                            <blockquote class="blockquote">
+                                <p>
+                                    <strong>Arquitectura y decisiones técnicas</strong><br><br>
+                                    PWA instalable con service worker propio (precache con Workbox) · Backend serverless sobre Supabase con Row Level Security · Lógica sensible en funciones SECURITY DEFINER de PostgreSQL · Notificaciones push event-driven (Database Webhook → Edge Function que firma el push con VAPID) · Tareas programadas con pg_cron · Almacenamiento privado con URLs firmadas temporales
+                                </p>
+                            </blockquote>
+                        </figure>
+
+                        <div class="border-start border-success border-4 fs-6">
+                            <strong>🔧 Tecnologías</strong><br>
+                            React 19 · Vite · Tailwind CSS v4 · React Router 7 · React Hook Form · Supabase (PostgreSQL + Row Level Security + Edge Functions) · vite-plugin-pwa · Workbox · Web Push API + VAPID · lucide-react · date-fns · Vercel
+                        </div>
+
+                        <div class="pt-3">
+                            <p class="fs-6">
+                                A diferencia de la versión original del TFC, en LUCA HOME he priorizado la calidad y la profundidad técnica: una PWA real con notificaciones push nativas, seguridad a nivel de base de datos con RLS, lógica de negocio bien encapsulada y una experiencia de usuario mobile-first. El resultado es una aplicación desplegada y funcional que refleja mi evolución como desarrolladora y mi forma de afrontar un proyecto de principio a fin.
+                            </p>
+                        </div>
+
+                        <div class="text-center pt-2">
+                            <a href="https://lucahome.vercel.app/" target="_blank" rel="noopener" class="btn btn-gradient btn-lg">Visitar LUCA HOME →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 pt-4">
+                <a href="index.html#blog" class="btn btn-light btn-lg">← Volver al portfolio</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright-text mb-1">© 2025 <span class="gradient-text">Jéssica Marrón</span></p>
+            <p class="mb-0" style="font-size:.85rem;opacity:.65;">Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
