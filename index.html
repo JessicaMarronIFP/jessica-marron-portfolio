@@ -59,6 +59,14 @@
         margin-bottom: 28px;
     }
     .kicker::before { content: "✨"; font-size: .9rem; }
+    .site-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(1.6rem, 3vw, 2.1rem);
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        margin: 0 0 18px;
+        color: var(--ink);
+    }
     h1 {
         font-family: 'Space Grotesk', sans-serif;
         font-size: clamp(2.3rem, 5.5vw, 3.1rem);
@@ -74,6 +82,23 @@
         color: transparent;
     }
     header p { color: var(--dim); font-size: 1.05rem; line-height: 1.65; max-width: 560px; margin: 0 auto; }
+    .random-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 26px;
+        padding: 12px 22px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: #fff;
+        color: var(--ink);
+        font-family: inherit;
+        font-size: .92rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all .2s ease;
+    }
+    .random-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 10px 25px rgba(84,87,240,.15); }
 
     .grid {
         display: grid;
@@ -81,6 +106,7 @@
         gap: 28px;
     }
     .card {
+        position: relative;
         background: var(--card);
         border: 1px solid var(--border);
         border-radius: 18px;
@@ -91,10 +117,9 @@
         transition: transform .25s ease, box-shadow .25s ease;
     }
     .card:hover { box-shadow: 0 20px 40px rgba(20,20,26,.1); }
+    .card-veil { position: absolute; inset: 0; z-index: 3; }
 
     /* Tarjeta 1 — Creativo con gradientes */
-    .card--gradient .btn.primary { background: var(--gradient-warm); border-color: transparent; color: #fff; }
-    .card--gradient .btn.primary:hover { filter: brightness(1.08); }
     .card--gradient:hover { box-shadow: 0 20px 40px rgba(84,87,240,.18); }
 
     /* Tarjeta 2 — Dark tech premium: la propia tarjeta se vuelve oscura */
@@ -103,9 +128,6 @@
     .card--dark .card-body p { color: #9498ab; }
     .card--dark .card-body .tag { color: var(--c2); }
     .card--dark .frame-outer { background: #0b0d16; border-bottom-color: #23263a; }
-    .card--dark .btn { background: #14172a; border-color: #2b2f47; color: #f2f3fb; }
-    .card--dark .btn.primary { background: linear-gradient(120deg, var(--accent), #a855f7); border-color: transparent; color: #fff; }
-    .card--dark .btn.primary:hover { filter: brightness(1.12); }
     .card--dark:hover { box-shadow: 0 20px 45px rgba(34,211,238,.18); }
 
     /* Tarjeta 3 — Neo-brutalismo: la tarjeta imita su propio estilo */
@@ -116,9 +138,6 @@
     }
     .card--brutal .frame-outer { border-bottom: 3px solid var(--ink); background: #f7f4ee; }
     .card--brutal .card-body .tag { color: var(--c3); }
-    .card--brutal .btn { border: 2px solid var(--ink); border-radius: 6px; font-weight: 800; }
-    .card--brutal .btn.primary { background: var(--c3); border-color: var(--ink); color: var(--ink); }
-    .card--brutal .btn.primary:hover { background: var(--ink); color: #fff; }
 
     .frame-outer {
         position: relative;
@@ -138,36 +157,53 @@
         image-rendering: -webkit-optimize-contrast;
         pointer-events: none;
     }
-    .frame-veil {
-        position: absolute; inset: 0;
-        z-index: 2;
-    }
 
     .card-body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
     .card-body h2 { font-size: 1.15rem; font-weight: 800; margin: 0; }
     .card-body .tag { font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--accent); }
     .card-body p { color: var(--dim); font-size: .92rem; margin: 0; flex: 1; }
 
-    .card-actions { display: flex; gap: 10px; margin-top: 6px; }
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        padding: 11px 16px;
-        border-radius: 10px;
-        font-size: .86rem;
-        font-weight: 700;
-        text-decoration: none;
-        border: 1px solid var(--border);
-        color: var(--ink);
-        background: #fff;
-        transition: all .2s ease;
-        flex: 1;
+    .poll {
+        margin-top: 60px;
+        overflow: hidden;
+        max-height: 400px;
+        opacity: 1;
+        transition: max-height .6s ease, opacity .5s ease, margin .6s ease;
     }
-    .btn:hover { border-color: var(--accent); color: var(--accent); }
-    .btn.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
-    .btn.primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .poll.poll-hidden { max-height: 0; opacity: 0; margin-top: 0; }
+    .poll-inner {
+        max-width: 520px;
+        margin: 0 auto;
+        text-align: center;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 32px 28px;
+        box-shadow: 0 1px 3px rgba(20,20,26,.04);
+    }
+    .poll-question { font-weight: 700; font-size: 1.05rem; margin: 0 0 20px; }
+    .poll-options { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .poll-option {
+        padding: 11px 18px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: #fff;
+        color: var(--ink);
+        font-weight: 700;
+        font-size: .88rem;
+        cursor: pointer;
+        transition: all .2s ease;
+    }
+    .poll-option:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .poll-thanks {
+        display: none;
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: var(--accent);
+        margin: 0;
+    }
+    .poll-inner.voted .poll-options { display: none; }
+    .poll-inner.voted .poll-thanks { display: block; }
 
     footer { text-align: center; margin-top: 60px; color: var(--dim); font-size: .85rem; }
 
@@ -187,8 +223,10 @@
 
     <div class="wrap">
         <header>
+            <p class="site-title">Portfolio Jéssica Marrón</p>
             <h1>¿Encajo con el <span class="gradient-text">estilo de tu marca</span>? Compruébalo.</h1>
             <p>Construí este portfolio tres veces, con tres identidades completamente distintas, para demostrar algo que un CV no muestra: mi capacidad de adaptar diseño y código a lo que cada proyecto necesita. Elige la que más te convenza... o no.</p>
+            <button class="random-btn" id="randomBtn">🎲 Elige por mí</button>
         </header>
 
         <div class="grid">
@@ -196,49 +234,52 @@
             <div class="card card--gradient">
                 <div class="frame-outer" data-scale-wrap>
                     <iframe src="clasico/index.html" tabindex="-1" title="Vista previa: Creativo con gradientes"></iframe>
-                    <a class="frame-veil" href="clasico/index.html" aria-label="Abrir Creativo con gradientes"></a>
                 </div>
                 <div class="card-body">
                     <span class="tag">Encaja si buscas cercanía y claridad</span>
                     <h2>Creativo con gradientes</h2>
                     <p>Clara, ordenada y fácil de leer al primer vistazo. La elegirías para un equipo donde la confianza y la comunicación importan tanto como el código.</p>
-                    <div class="card-actions">
-                        <a class="btn primary" href="clasico/index.html">Ver a pantalla completa →</a>
-                    </div>
                 </div>
+                <a class="card-veil" href="clasico/index.html" aria-label="Abrir Creativo con gradientes"></a>
             </div>
 
             <div class="card card--dark">
                 <div class="frame-outer" data-scale-wrap>
                     <iframe src="moderno/index.html" tabindex="-1" title="Vista previa: Dark tech premium"></iframe>
-                    <a class="frame-veil" href="moderno/index.html" aria-label="Abrir Dark tech premium"></a>
                 </div>
                 <div class="card-body">
                     <span class="tag">Encaja si eres un producto o startup tech</span>
                     <h2>Dark tech premium</h2>
                     <p>Modo oscuro, tipografía fuerte y el mismo lenguaje visual que usan hoy los productos de IA. La elegirías si quieres ver si sé construir algo con pinta de producto real.</p>
-                    <div class="card-actions">
-                        <a class="btn primary" href="moderno/index.html">Ver a pantalla completa →</a>
-                    </div>
                 </div>
+                <a class="card-veil" href="moderno/index.html" aria-label="Abrir Dark tech premium"></a>
             </div>
 
             <div class="card card--brutal">
                 <div class="frame-outer" data-scale-wrap>
                     <iframe src="brutalista/index.html" tabindex="-1" title="Vista previa: Neo-brutalismo editorial"></iframe>
-                    <a class="frame-veil" href="brutalista/index.html" aria-label="Abrir Neo-brutalismo editorial"></a>
                 </div>
                 <div class="card-body">
                     <span class="tag">Encaja si tu marca no teme destacar</span>
                     <h2>Neo-brutalismo editorial</h2>
                     <p>Tipografía gigante, bordes marcados y personalidad sin filtros. La elegirías si prefieres que te recuerden antes que pasar desapercibido.</p>
-                    <div class="card-actions">
-                        <a class="btn primary" href="brutalista/index.html">Ver a pantalla completa →</a>
-                    </div>
                 </div>
+                <a class="card-veil" href="brutalista/index.html" aria-label="Abrir Neo-brutalismo editorial"></a>
             </div>
 
         </div>
+
+        <section class="poll" id="poll">
+            <div class="poll-inner" id="pollInner">
+                <p class="poll-question">Y si has visto los tres... ¿Cuál es tu favorito?</p>
+                <div class="poll-options" id="pollOptions">
+                    <button class="poll-option" data-choice="Creativo con gradientes">Creativo con gradientes</button>
+                    <button class="poll-option" data-choice="Dark tech premium">Dark tech premium</button>
+                    <button class="poll-option" data-choice="Neo-brutalismo">Neo-brutalismo</button>
+                </div>
+                <p class="poll-thanks" id="pollThanks">¡Gracias por compartir tu opinión! 😊</p>
+            </div>
+        </section>
 
         <footer>La versatilidad no se cuenta, se demuestra.</footer>
     </div>
@@ -259,6 +300,40 @@
         window.addEventListener('load', scaleFrames);
         window.addEventListener('resize', scaleFrames);
         scaleFrames();
+    </script>
+
+    <!-- Elige por mí (al azar) -->
+    <script>
+        document.getElementById('randomBtn').addEventListener('click', function () {
+            var pages = ['clasico/index.html', 'moderno/index.html', 'brutalista/index.html'];
+            var pick = pages[Math.floor(Math.random() * pages.length)];
+            window.location.href = pick;
+        });
+    </script>
+
+    <!-- Encuesta -->
+    <script>
+        (function () {
+            var poll = document.getElementById('poll');
+            var pollInner = document.getElementById('pollInner');
+            var savedVote = localStorage.getItem('portfolioPollVote');
+
+            if (savedVote) {
+                poll.classList.add('poll-hidden');
+                return;
+            }
+
+            document.querySelectorAll('.poll-option').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var choice = this.getAttribute('data-choice');
+                    localStorage.setItem('portfolioPollVote', choice);
+                    pollInner.classList.add('voted');
+                    setTimeout(function () {
+                        poll.classList.add('poll-hidden');
+                    }, 2200);
+                });
+            });
+        })();
     </script>
 </body>
 </html>
