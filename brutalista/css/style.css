@@ -11,6 +11,17 @@
     --border: 3px solid var(--ink);
     --shadow: 7px 7px 0 var(--ink);
     --shadow-sm: 4px 4px 0 var(--ink);
+    --field-bg: #fff;
+    --field-placeholder: #8a8a8a;
+}
+
+html[data-theme="dark"] {
+    --ink: #f5f2ea;
+    --paper: #111114;
+    --accent: #ff6a55;
+    --accent-soft: rgba(255, 106, 85, .16);
+    --field-bg: #1b1b20;
+    --field-placeholder: #7a7a82;
 }
 
 * { box-sizing: border-box; }
@@ -106,6 +117,7 @@ a { text-decoration: none; color: inherit; }
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0 var(--ink);
 }
+.nav-controls { display: flex; align-items: center; gap: 8px; }
 .nav-toggle {
     display: none;
     background: var(--ink);
@@ -114,6 +126,22 @@ a { text-decoration: none; color: inherit; }
     width: 42px; height: 38px;
     font-size: 1.2rem;
 }
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 38px;
+    background: var(--paper);
+    color: var(--ink);
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.theme-toggle:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
 
 /* ============ SECTION HEADERS ============ */
 .section-tag {
@@ -372,7 +400,7 @@ a { text-decoration: none; color: inherit; }
 label { font-family: 'Space Mono', monospace; font-size: .78rem; font-weight: 700; text-transform: uppercase; }
 input, textarea {
     width: 100%;
-    background: #fff;
+    background: var(--field-bg);
     border: 3px solid var(--ink);
     padding: 13px 14px;
     color: var(--ink);
@@ -382,7 +410,7 @@ input, textarea {
 }
 textarea { min-height: 130px; resize: vertical; }
 input:focus, textarea:focus { outline: none; box-shadow: 5px 5px 0 var(--accent); }
-input::placeholder, textarea::placeholder { color: #8a8a8a; font-weight: 500; }
+input::placeholder, textarea::placeholder { color: var(--field-placeholder); font-weight: 500; }
 
 .contact-extra {
     display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;

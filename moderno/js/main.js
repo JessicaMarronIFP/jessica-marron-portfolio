@@ -1,5 +1,5 @@
 // NavBar Link Active
-let links = document.querySelectorAll('.nav-link');
+let links = document.querySelectorAll('.nav-links a');
         for(let i=0; i<links.length; i++){
         links[i].addEventListener('click', function() {
             for(let j=0; j<links.length; j++)
