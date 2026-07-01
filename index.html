@@ -19,6 +19,7 @@
         --c2: #22d3ee;
         --c3: #f5a623;
         --gradient: linear-gradient(120deg, var(--accent), var(--c2) 65%);
+        --gradient-warm: linear-gradient(120deg, #ec4899, var(--c3));
     }
     * { box-sizing: border-box; }
     body {
@@ -91,10 +92,8 @@
     }
     .card:hover { box-shadow: 0 20px 40px rgba(20,20,26,.1); }
 
-    /* Tarjeta 1 — Creativo con gradientes: acento de color arriba */
-    .card--gradient { position: relative; }
-    .card--gradient::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--gradient); z-index: 3; }
-    .card--gradient .btn.primary { background: var(--gradient); border-color: transparent; }
+    /* Tarjeta 1 — Creativo con gradientes */
+    .card--gradient .btn.primary { background: var(--gradient-warm); border-color: transparent; color: #fff; }
     .card--gradient .btn.primary:hover { filter: brightness(1.08); }
     .card--gradient:hover { box-shadow: 0 20px 40px rgba(84,87,240,.18); }
 
@@ -197,14 +196,14 @@
             <div class="card card--gradient">
                 <div class="frame-outer" data-scale-wrap>
                     <iframe src="clasico/index.html" tabindex="-1" title="Vista previa: Creativo con gradientes"></iframe>
-                    <a class="frame-veil" href="clasico/index.html" target="_blank" aria-label="Abrir Creativo con gradientes"></a>
+                    <a class="frame-veil" href="clasico/index.html" aria-label="Abrir Creativo con gradientes"></a>
                 </div>
                 <div class="card-body">
                     <span class="tag">Encaja si buscas cercanía y claridad</span>
                     <h2>Creativo con gradientes</h2>
                     <p>Clara, ordenada y fácil de leer al primer vistazo. La elegirías para un equipo donde la confianza y la comunicación importan tanto como el código.</p>
                     <div class="card-actions">
-                        <a class="btn primary" href="clasico/index.html" target="_blank">Ver a pantalla completa →</a>
+                        <a class="btn primary" href="clasico/index.html">Ver a pantalla completa →</a>
                     </div>
                 </div>
             </div>
@@ -212,14 +211,14 @@
             <div class="card card--dark">
                 <div class="frame-outer" data-scale-wrap>
                     <iframe src="moderno/index.html" tabindex="-1" title="Vista previa: Dark tech premium"></iframe>
-                    <a class="frame-veil" href="moderno/index.html" target="_blank" aria-label="Abrir Dark tech premium"></a>
+                    <a class="frame-veil" href="moderno/index.html" aria-label="Abrir Dark tech premium"></a>
                 </div>
                 <div class="card-body">
                     <span class="tag">Encaja si eres un producto o startup tech</span>
                     <h2>Dark tech premium</h2>
                     <p>Modo oscuro, tipografía fuerte y el mismo lenguaje visual que usan hoy los productos de IA. La elegirías si quieres ver si sé construir algo con pinta de producto real.</p>
                     <div class="card-actions">
-                        <a class="btn primary" href="moderno/index.html" target="_blank">Ver a pantalla completa →</a>
+                        <a class="btn primary" href="moderno/index.html">Ver a pantalla completa →</a>
                     </div>
                 </div>
             </div>
@@ -227,14 +226,14 @@
             <div class="card card--brutal">
                 <div class="frame-outer" data-scale-wrap>
                     <iframe src="brutalista/index.html" tabindex="-1" title="Vista previa: Neo-brutalismo editorial"></iframe>
-                    <a class="frame-veil" href="brutalista/index.html" target="_blank" aria-label="Abrir Neo-brutalismo editorial"></a>
+                    <a class="frame-veil" href="brutalista/index.html" aria-label="Abrir Neo-brutalismo editorial"></a>
                 </div>
                 <div class="card-body">
                     <span class="tag">Encaja si tu marca no teme destacar</span>
                     <h2>Neo-brutalismo editorial</h2>
                     <p>Tipografía gigante, bordes marcados y personalidad sin filtros. La elegirías si prefieres que te recuerden antes que pasar desapercibido.</p>
                     <div class="card-actions">
-                        <a class="btn primary" href="brutalista/index.html" target="_blank">Ver a pantalla completa →</a>
+                        <a class="btn primary" href="brutalista/index.html">Ver a pantalla completa →</a>
                     </div>
                 </div>
             </div>
